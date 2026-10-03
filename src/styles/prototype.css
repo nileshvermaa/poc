@@ -1,0 +1,103 @@
+/* Prototype toolbar styles: quiet, collapsible, contextual dev controls */
+
+.proto {
+  background-color: var(--efx-charcoal);
+  color: var(--text-on-dark);
+  font-size: var(--fs-fine);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  position: relative;
+  z-index: 1000;
+}
+
+.proto__inner {
+  display: flex;
+  align-items: center;
+  gap: var(--s2);
+  padding: 6px var(--gutter);
+  max-width: var(--container);
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.proto__badge {
+  background-color: var(--efx-crimson);
+  color: var(--text-on-dark);
+  font-weight: 700;
+  font-size: 0.68rem;
+  padding: 2px 6px;
+  border-radius: var(--radius-sm);
+}
+
+.proto__label {
+  color: rgba(255, 255, 255, 0.7);
+  margin-right: var(--s1);
+}
+
+.proto__links {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
+.proto__btn {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-sm);
+  color: var(--text-on-dark);
+  padding: 3px 8px;
+  font-family: inherit;
+  font-size: var(--fs-fine);
+  cursor: pointer;
+  line-height: 1.2;
+  transition: background-color var(--ease), border-color var(--ease);
+}
+
+.proto__btn:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}
+
+.proto__btn--active {
+  background-color: var(--efx-teal);
+  border-color: var(--efx-teal);
+  font-weight: 700;
+}
+
+.proto__note {
+  margin-left: auto;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 0.72rem;
+}
+
+.proto__dev-btn {
+  background-color: var(--warn);
+  border: 1px solid var(--warn);
+  color: var(--text);
+  font-weight: 700;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  font-size: var(--fs-fine);
+  font-family: inherit;
+}
+
+.proto__dev-btn:hover {
+  filter: brightness(0.95);
+}
+
+.proto__toggle {
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.8);
+  border-radius: var(--radius-sm);
+  padding: 2px 6px;
+  font-size: 0.7rem;
+  cursor: pointer;
+  margin-left: var(--s2);
+}
+
+.proto__collapsed {
+  display: flex;
+  justify-content: flex-end;
+  padding: 2px var(--gutter);
+}

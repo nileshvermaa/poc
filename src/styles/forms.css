@@ -1,0 +1,344 @@
+/* Form screens: tradeline account form, personal info form, enquiry form, comparison and history tables */
+
+/* Sticky form action bar */
+.form-action-bar {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: var(--bg);
+  border-top: 1px solid var(--line);
+  box-shadow: var(--shadow-bar);
+  padding: var(--s3) 0;
+  z-index: 50;
+}
+
+.form-action-bar__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+.form-action-bar__summary {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.form-action-bar__count {
+  font-size: var(--fs-body);
+  color: var(--text-strong);
+  font-weight: 700;
+}
+
+.form-action-bar__error {
+  color: var(--danger);
+  font-size: var(--fs-small);
+  font-weight: 600;
+}
+
+.form-action-bar__buttons {
+  display: flex;
+  align-items: center;
+  gap: var(--s3);
+  flex-wrap: wrap;
+}
+
+/* Scenario tabs in tradeline form */
+.scenario-tabs {
+  display: flex;
+  gap: var(--s5);
+  border-bottom: 1px solid var(--line);
+  margin-bottom: var(--s5);
+  overflow-x: auto;
+}
+
+.scenario-tab {
+  background: none;
+  border: none;
+  padding: var(--s3) var(--s1);
+  font-family: inherit;
+  font-size: var(--fs-body);
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-bottom: 3px solid transparent;
+  margin-bottom: -1px;
+  white-space: nowrap;
+  transition: color var(--ease), border-color var(--ease);
+}
+
+.scenario-tab:hover {
+  color: var(--text-strong);
+}
+
+.scenario-tab--active {
+  color: var(--efx-teal);
+  border-bottom-color: var(--efx-teal);
+  font-weight: 700;
+}
+
+/* Tradeline picker */
+.tl-picker-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--s5);
+  margin-top: var(--s3);
+}
+
+@media (max-width: 767px) {
+  .tl-picker-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.tl-picker-group__title {
+  font-size: var(--fs-small);
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: var(--s2);
+}
+
+.tl-picker-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s2);
+}
+
+.tl-option {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--s3);
+  padding: var(--s3) var(--s4);
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-left: 3px solid transparent;
+  border-radius: var(--radius);
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  transition: background-color var(--ease), border-color var(--ease);
+}
+
+.tl-option:hover {
+  background-color: var(--bg-subtle);
+  border-color: var(--line-strong);
+}
+
+.tl-option--selected {
+  background-color: var(--bg-subtle);
+  border-color: var(--line-strong);
+  border-left: 3px solid var(--efx-teal);
+}
+
+.tl-option__radio {
+  margin-top: 3px;
+  accent-color: var(--efx-teal);
+}
+
+.tl-option__content {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.tl-option__institution {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--efx-charcoal);
+}
+
+.tl-option__meta {
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Comparison tables */
+.compare-group {
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--s5);
+  overflow: hidden;
+}
+
+.compare-group__header {
+  background-color: var(--bg-subtle);
+  padding: var(--s3) var(--s4);
+  border-bottom: 1px solid var(--line);
+}
+
+.compare-group__title {
+  font-size: var(--fs-body);
+  font-weight: 700;
+  color: var(--efx-charcoal);
+  margin: 0;
+}
+
+.compare-table-wrap {
+  overflow-x: auto;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.compare-table th {
+  background-color: var(--bg);
+  color: var(--efx-charcoal);
+  font-weight: 700;
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line-strong);
+  text-align: left;
+}
+
+.compare-col-caption {
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: var(--fs-fine);
+}
+
+.compare-table td {
+  padding: 10px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: middle;
+}
+
+.compare-table tr:last-child td {
+  border-bottom: none;
+}
+
+.compare-row {
+  border-left: 3px solid transparent;
+}
+
+.compare-row--edited {
+  background-color: var(--warn-bg);
+  border-left: 3px solid var(--warn);
+}
+
+.compare-label-wrap {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: var(--s2);
+}
+
+.compare-label {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.compare-reported {
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.compare-correction {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.compare-reported-hint {
+  font-size: var(--fs-fine);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+/* History table */
+.history-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-small);
+}
+
+.history-table th {
+  background-color: var(--bg-subtle);
+  color: var(--efx-charcoal);
+  font-weight: 700;
+  padding: 10px 14px;
+  border-bottom: 1px solid var(--line-strong);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.history-table td {
+  padding: 8px 14px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.history-cell {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 110px;
+}
+
+.history-cell--changed {
+  background-color: var(--warn-bg);
+  border-left: 3px solid var(--warn);
+  padding-left: var(--s1);
+  border-radius: var(--radius-sm);
+}
+
+.history-was {
+  font-size: var(--fs-fine);
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.field__input--compact {
+  min-height: 32px;
+  padding: 4px 8px;
+  font-size: var(--fs-small);
+}
+
+/* Enquiry form table */
+.enquiry-row {
+  border-left: 3px solid transparent;
+}
+
+.enquiry-row--flagged {
+  background-color: var(--warn-bg);
+  border-left: 3px solid var(--warn);
+}
+
+/* Responsive stacking for comparison tables under 640px */
+@media (max-width: 639px) {
+  .compare-table,
+  .compare-table thead,
+  .compare-table tbody,
+  .compare-table th,
+  .compare-table td,
+  .compare-table tr {
+    display: block;
+  }
+
+  .compare-table thead {
+    display: none;
+  }
+
+  .compare-table tr {
+    padding: var(--s3);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .compare-table td {
+    padding: var(--s1) 0;
+    border-bottom: none;
+  }
+
+  .compare-reported::before {
+    content: "Reported: ";
+    font-weight: 600;
+    color: var(--text-muted);
+  }
+}

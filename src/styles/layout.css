@@ -1,0 +1,108 @@
+/* Layout helpers, containers, page rhythm, grids, breakpoints */
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg);
+}
+
+.app__content {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  width: 100%;
+  max-width: var(--container);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--gutter);
+  padding-right: var(--gutter);
+}
+
+@media (max-width: 575px) {
+  .container {
+    padding-left: var(--s4);
+    padding-right: var(--s4);
+  }
+}
+
+.page {
+  padding-top: var(--s6);
+  padding-bottom: var(--s8);
+  width: 100%;
+}
+
+.page-head {
+  margin-bottom: var(--s6);
+}
+
+.page-head__title {
+  margin-bottom: var(--s2);
+  color: var(--efx-charcoal);
+}
+
+.page-head__lead {
+  font-size: var(--fs-body);
+  color: var(--text-muted);
+  max-width: 62ch;
+  line-height: var(--lh-body);
+  margin: 0;
+}
+
+.page-head__rule {
+  display: block;
+  width: 56px;
+  height: 3px;
+  background-color: var(--efx-crimson);
+  margin-top: var(--s2);
+  margin-bottom: var(--s4);
+}
+
+/* Two-tone heading accent */
+.accent-crimson {
+  color: var(--efx-crimson);
+}
+
+/* Grids */
+.grid-8-4 {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s5);
+  align-items: start;
+}
+
+@media (min-width: 992px) {
+  .grid-8-4 {
+    grid-template-columns: minmax(0, 8fr) minmax(0, 4fr);
+    gap: var(--s6);
+  }
+}
+
+/* Stack flex utilities */
+.stack {
+  display: flex;
+  flex-direction: column;
+}
+
+.stack--s2 {
+  gap: var(--s2);
+}
+
+.stack--s3 {
+  gap: var(--s3);
+}
+
+.stack--s4 {
+  gap: var(--s4);
+}
+
+.stack--s5 {
+  gap: var(--s5);
+}
+
+.stack--s6 {
+  gap: var(--s6);
+}

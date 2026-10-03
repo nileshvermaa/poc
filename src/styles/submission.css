@@ -1,0 +1,107 @@
+/* Submission screens: review, confirmation done, dispute status and tracker */
+
+/* Stage tracker */
+.stage-track {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--s2);
+  margin-top: var(--s3);
+}
+
+@media (max-width: 575px) {
+  .stage-track {
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: var(--s3);
+  }
+}
+
+.stage-track__step {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.stage-track__bar {
+  height: 3px;
+  border-radius: 1.5px;
+  width: 100%;
+}
+
+.stage-track__bar--done {
+  background-color: var(--efx-charcoal);
+}
+
+.stage-track__bar--cur {
+  background-color: var(--efx-teal);
+}
+
+.stage-track__bar--next {
+  background-color: var(--line);
+}
+
+.stage-track__label {
+  font-size: var(--fs-fine);
+  color: var(--text-muted);
+}
+
+.stage-track__step--cur .stage-track__label {
+  color: var(--efx-teal);
+  font-weight: 700;
+}
+
+.stage-track__step--done .stage-track__label {
+  color: var(--efx-charcoal);
+}
+
+/* Case status card */
+.case-block {
+  background-color: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: var(--s5);
+  margin-bottom: var(--s5);
+}
+
+.case-block__head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: var(--s4);
+  margin-bottom: var(--s4);
+  flex-wrap: wrap;
+  gap: var(--s3);
+}
+
+.child-item {
+  padding: var(--s4) 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.child-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.child-item__head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: var(--s3);
+  flex-wrap: wrap;
+}
+
+.proto-only-link {
+  font-size: var(--fs-fine);
+  color: var(--text-muted);
+  text-decoration: underline;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  font-family: inherit;
+}
+
+.proto-only-link:hover {
+  color: var(--efx-charcoal);
+}

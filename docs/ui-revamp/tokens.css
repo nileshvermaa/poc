@@ -1,0 +1,77 @@
+/* Equifax India · D2C dispute portal — design tokens
+   Values marked (site) were read from equifax.co.in on 2026-10-03.
+   Values marked (derived) are additions for states the site does not show. */
+
+:root {
+  /* Brand */
+  --efx-crimson: #9e1b32;        /* (site) accent rules, one heading keyword */
+  --efx-crimson-dark: #7d1527;   /* (derived) crimson hover/pressed, 10.5:1 on white */
+  --efx-teal: #007298;           /* (site) --primary: links, buttons, focus */
+  --efx-teal-dark: #005a78;      /* (derived) pressed, 7.7:1 on white */
+  --efx-charcoal: #333e48;       /* (site) --dark: headings, footer */
+
+  /* Text */
+  --text: #272833;               /* (site) --body-color */
+  --text-strong: var(--efx-charcoal);
+  --text-muted: #5b6771;         /* (site) --gray-600, 5.8:1 on white */
+  --text-on-dark: #ffffff;
+  --link: var(--efx-teal);
+
+  /* Surfaces and lines */
+  --bg: #ffffff;
+  --bg-subtle: #f7f8f9;          /* (site) --gray-100: breadcrumb, table head, page wells */
+  --bg-band: #eeeeee;            /* (site) --gray-200 */
+  --line: #e7e7e7;               /* (site) --gray-300 */
+  --line-strong: #b2b2b2;        /* (site) --gray-400: input borders */
+  --disabled: #a3aaad;           /* (site) --gray-500: never for text */
+
+  /* Status. Text colours are the AA-safe ones. */
+  --ok: #278c10;                 /* (site) graphics only */
+  --ok-text: #1f7010;            /* (derived) 6:1 on white */
+  --ok-bg: #eaf5e6;              /* (derived) */
+  --warn: #f3c300;               /* (site) edited-row marker, warning border */
+  --warn-bg: #fff6d6;            /* (derived) */
+  --danger: #e8002a;             /* (site) 4.7:1 on white; always pair with icon + words */
+  --danger-bg: #fdecef;          /* (derived) */
+  --info: #00ace6;               /* (site) illustration/gauge only */
+  --orange: #f86800;             /* (site) --secondary: graphics only */
+
+  /* Type */
+  --font: "Open Sans", Arial, sans-serif;
+  --fs-display: 2.625rem;        /* 42 (site h2 hero) */
+  --fs-h1: 2.25rem;              /* 36 */
+  --fs-h2: 1.75rem;              /* 28 */
+  --fs-h3: 1.25rem;              /* 20 */
+  --fs-body: 1rem;               /* 16 */
+  --fs-small: 0.875rem;          /* 14 (site labels, utility links) */
+  --fs-fine: 0.78rem;            /* 12.5 (site footer) */
+  --lh-tight: 1.2;
+  --lh-body: 1.55;
+
+  /* Shape */
+  --radius-sm: 3px;              /* (site) --border-radius-sm .1875rem */
+  --radius: 4px;                 /* (site) buttons */
+  --radius-lg: 6px;              /* (site) --border-radius-lg .375rem, max for cards */
+  --rule: 3px solid var(--efx-crimson);   /* the signature top/bottom rule */
+
+  /* Space: 4px base */
+  --s1: 4px; --s2: 8px; --s3: 12px; --s4: 16px; --s5: 24px; --s6: 32px; --s7: 48px; --s8: 64px;
+
+  /* Layout */
+  --container: 1140px;           /* (site) Bootstrap xl */
+  --gutter: 24px;
+
+  /* Elevation: almost none. Only the sticky bar and the login card. */
+  --shadow-bar: 0 -2px 8px rgba(51, 62, 72, 0.08);
+  --shadow-card: 0 1px 4px rgba(51, 62, 72, 0.12);
+
+  /* Motion */
+  --ease: 150ms ease-out;
+
+  /* Focus */
+  --focus: 0 0 0 3px rgba(0, 114, 152, 0.35);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root { --ease: 0ms; }
+}
